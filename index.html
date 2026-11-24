@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Direktori Alumni Universitas Kuningan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigasi (putih) -->
+    <nav class="nav">
+        <div class="container nav-isi">
+            <a class="merek" href="#beranda">
+                <img src="assets/logo-uniku.png" alt="Logo Universitas Kuningan" width="40" height="40">
+                <span>Direktori Alumni<small>Universitas Kuningan</small></span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="#beranda">Beranda</a></li>
+                <li><a href="#filter">Cari alumni</a></li>
+                <li><a href="#prodi">Program studi</a></li>
+            </ul>
+            <img class="logo-fkom" src="assets/logo-fkom.png" alt="Logo Fakultas Ilmu Komputer Universitas Kuningan" height="38">
+        </div>
+    </nav>
+
+    <!-- Hero (biru) -->
+    <header class="hero" id="beranda">
+        <div class="container hero-isi">
+            <div class="hero-teks">
+                <p class="hero-kampus">Fakultas Ilmu Komputer, Universitas Kuningan</p>
+                <h1>Temukan alumni Universitas Kuningan di dunia kerja</h1>
+                <p class="hero-deskripsi">
+                    Lihat di mana lulusan Sistem Informasi, Teknik Informatika,
+                    Desain Komunikasi Visual, dan Teknik Sipil berkarya sekarang.
+                    Cari berdasarkan nama, prodi, angkatan, bidang kerja, atau kota.
+                </p>
+                <div class="hero-tombol">
+                    <a class="tombol tombol-putih" href="#filter">Cari alumni</a>
+                    <a class="tombol tombol-garis" href="#prodi">Lihat program studi</a>
+                </div>
+                <p class="hero-lencana" id="lencana-total"></p>
+            </div>
+            <figure class="hero-foto">
+                <img src="assets/hero-kampus.webp" alt="Gedung Rektorat Universitas Kuningan" width="1500" height="816">
+            </figure>
+        </div>
+    </header>
+
+    <main class="container" id="alumni">
+        <!-- Panel filter (putih) -->
+        <section id="filter" class="panel-filter" aria-label="Filter alumni">
+            <div class="baris-cari">
+                <label for="kolom-cari" class="sr-only">Cari alumni berdasarkan nama, prodi, atau pekerjaan</label>
+                <svg class="ikon-cari" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+                <input type="search" id="kolom-cari" autocomplete="off"
+                       placeholder="Cari nama, prodi, atau pekerjaan, misalnya &quot;Designer&quot;">
+            </div>
+
+            <div class="baris-prodi" id="prodi">
+                <p class="label-kecil">Program studi</p>
+                <div class="grup-prodi" id="grup-prodi" role="group" aria-label="Filter program studi"></div>
+            </div>
+
+            <div class="baris-pilihan">
+                <div class="pilihan">
+                    <label for="pilih-angkatan">Angkatan</label>
+                    <select id="pilih-angkatan"></select>
+                </div>
+                <div class="pilihan">
+                    <label for="pilih-bidang">Bidang kerja</label>
+                    <select id="pilih-bidang"></select>
+                </div>
+                <div class="pilihan">
+                    <label for="pilih-kota">Kota</label>
+                    <select id="pilih-kota"></select>
+                </div>
+                <div class="pilihan">
+                    <label for="pilih-urut">Urutkan</label>
+                    <select id="pilih-urut">
+                        <option value="nama">Nama A sampai Z</option>
+                        <option value="baru">Angkatan terbaru</option>
+                        <option value="lama">Angkatan terlama</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="baris-info">
+                <p id="info-hasil" class="info-hasil" aria-live="polite"></p>
+                <button type="button" id="tombol-reset-atas" class="tombol-tipis" hidden>Atur ulang filter</button>
+            </div>
+        </section>
+
+        <!-- Daftar alumni -->
+        <section id="daftar-alumni" class="grid" aria-label="Daftar alumni"></section>
+
+        <div id="pesan-kosong" class="pesan-kosong" hidden>
+            <p>Tidak ada alumni yang cocok dengan filter kamu. Coba kurangi filter atau ganti kata kunci.</p>
+            <button type="button" id="tombol-reset" class="tombol tombol-biru">Atur ulang filter</button>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>Hak Cipta &copy; 2026 &middot; Universitas Kuningan &middot; Fakultas Ilmu Komputer</p>
+            <p class="catatan">Developed by: Muhammad Aziz Mubarok - Sistem Informasi.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,726 @@
+/* ===== Variabel warna: perpaduan putih dan biru tua ===== */
+:root {
+    --navy: #0f2a5c;
+    --navy-2: #173a7a;
+    --biru: #2563eb;
+    --kuning: #facc15;
+    --cyan: #22d3ee;
+
+    --latar: #f3f6fb;
+    --putih: #ffffff;
+    --teks: #0f1b33;
+    --teks-redup: #5b6b86;
+    --garis: #dbe3f0;
+
+    /* warna tiap program studi */
+    --si: #0284c7;
+    --si-muda: #38bdf8;
+    --ti: #d97706;
+    --ti-muda: #fbbf24;
+    --dkv: #0d9488;
+    --dkv-muda: #34d399;
+    --ts: #ea580c;
+    --ts-muda: #fb923c;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+}
+
+body {
+    font-family: "Plus Jakarta Sans", "Segoe UI", Arial, sans-serif;
+    background-color: var(--latar);
+    color: var(--teks);
+    line-height: 1.6;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    width: min(1120px, 100% - 2rem);
+    margin-inline: auto;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+}
+
+/* ===== Navigasi putih ===== */
+.nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: var(--putih);
+    border-bottom: 1px solid var(--garis);
+    box-shadow: 0 2px 12px rgba(15, 42, 92, 0.06);
+}
+
+.nav-isi {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 0.6rem 0;
+}
+
+.merek {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    color: var(--navy);
+    font-weight: 800;
+    line-height: 1.2;
+    text-decoration: none;
+}
+
+.merek img {
+    width: 40px;
+    height: auto;
+}
+
+.merek small {
+    display: block;
+    color: var(--teks-redup);
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 1.6rem;
+    margin-left: auto;
+}
+
+.nav-menu a {
+    color: var(--teks);
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.nav-menu a:hover {
+    color: var(--biru);
+}
+
+.logo-fkom {
+    width: auto;
+    height: 38px;
+}
+
+/* ===== Hero biru ===== */
+.hero {
+    overflow: hidden;
+    color: #fff;
+    background:
+        radial-gradient(circle at 78% 30%, rgba(34, 211, 238, 0.28), transparent 45%),
+        radial-gradient(circle at 10% 100%, rgba(250, 204, 21, 0.14), transparent 40%),
+        linear-gradient(135deg, var(--navy) 0%, var(--navy-2) 100%);
+}
+
+.hero-isi {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 2rem;
+    align-items: end;
+}
+
+.hero-foto {
+    min-width: 0;
+}
+
+.hero-teks {
+    align-self: center;
+    padding: 3.5rem 0;
+}
+
+.hero-kampus {
+    color: #bcd2ff;
+    font-weight: 500;
+    font-size: 0.95rem;
+    margin-bottom: 0.8rem;
+}
+
+.hero h1 {
+    font-size: clamp(2rem, 4.4vw, 3.2rem);
+    font-weight: 800;
+    line-height: 1.12;
+    margin-bottom: 1.1rem;
+}
+
+.hero-deskripsi {
+    color: #dbe6ff;
+    max-width: 46ch;
+    margin-bottom: 1.8rem;
+}
+
+.hero-tombol {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+}
+
+/* Tombol */
+.tombol {
+    display: inline-block;
+    padding: 0.8rem 1.6rem;
+    font: inherit;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-decoration: none;
+    border-radius: 999px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.tombol:hover {
+    transform: translateY(-2px);
+}
+
+.tombol-putih {
+    color: var(--navy);
+    background-color: #fff;
+}
+
+.tombol-garis {
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.7);
+}
+
+.tombol-garis:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+}
+
+.tombol-biru {
+    color: #fff;
+    background-color: var(--navy);
+}
+
+.tombol-biru:hover {
+    background-color: var(--biru);
+}
+
+/* Foto kampus tanpa latar */
+.hero-foto {
+    position: relative;
+    align-self: end;
+}
+
+.hero-foto img {
+    width: 112%;
+    max-width: none;
+    margin-left: -6%;
+    height: auto;
+    filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.35));
+}
+
+/* Keterangan jumlah alumni di bawah tombol */
+.hero-lencana {
+    display: inline-block;
+    margin-top: 1.6rem;
+    padding: 0.45rem 1rem;
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 500;
+    background-color: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 999px;
+}
+
+/* ===== Panel filter putih ===== */
+main {
+    padding-bottom: 3.5rem;
+}
+
+.panel-filter {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: var(--putih);
+    border: 1px solid var(--garis);
+    border-radius: 20px;
+    box-shadow: 0 14px 34px rgba(15, 42, 92, 0.08);
+}
+
+.baris-cari {
+    position: relative;
+}
+
+.ikon-cari {
+    position: absolute;
+    left: 1.1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--teks-redup);
+    pointer-events: none;
+}
+
+.baris-cari input {
+    width: 100%;
+    padding: 1rem 1.25rem 1rem 3rem;
+    font: inherit;
+    font-size: 1.02rem;
+    color: var(--teks);
+    background-color: var(--latar);
+    border: 2px solid var(--garis);
+    border-radius: 14px;
+    transition: border-color 0.2s, box-shadow 0.2s, background-color 0.2s;
+}
+
+.baris-cari input::placeholder {
+    color: var(--teks-redup);
+}
+
+.baris-cari input:focus {
+    outline: none;
+    background-color: #fff;
+    border-color: var(--biru);
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
+}
+
+.label-kecil {
+    margin: 1.2rem 0 0.5rem;
+    color: var(--teks-redup);
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+/* Chip program studi */
+.grup-prodi {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.3rem 0.85rem 0.3rem 0.35rem;
+    font: inherit;
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--teks);
+    background-color: #fff;
+    border: 2px solid var(--garis);
+    border-radius: 999px;
+    cursor: pointer;
+    transition: border-color 0.2s, background-color 0.2s, color 0.2s;
+}
+
+.chip-teks {
+    padding: 0.55rem 1rem;
+}
+
+.chip:hover {
+    border-color: var(--biru);
+}
+
+.chip .logo-bulat {
+    display: grid;
+    place-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.chip .logo-bulat img {
+    width: 25px;
+    height: 25px;
+    object-fit: contain;
+}
+
+.chip .jumlah {
+    color: var(--teks-redup);
+    font-size: 0.85rem;
+}
+
+.chip[aria-pressed="true"] {
+    color: #fff;
+    background-color: var(--navy);
+    border-color: var(--navy);
+    font-weight: 700;
+}
+
+.chip[aria-pressed="true"] .jumlah {
+    color: #bcd2ff;
+}
+
+/* Pilihan (select) */
+.baris-pilihan {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.9rem;
+    margin-top: 1.1rem;
+}
+
+.pilihan label {
+    display: block;
+    margin-bottom: 0.3rem;
+    color: var(--teks-redup);
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.pilihan select {
+    width: 100%;
+    padding: 0.7rem 0.85rem;
+    font: inherit;
+    color: var(--teks);
+    background-color: var(--latar);
+    border: 2px solid var(--garis);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: border-color 0.2s;
+}
+
+.pilihan select:focus {
+    outline: none;
+    border-color: var(--biru);
+}
+
+.baris-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 1.1rem;
+    min-height: 2.2rem;
+}
+
+.info-hasil {
+    color: var(--teks-redup);
+    font-size: 0.95rem;
+}
+
+.tombol-tipis {
+    font: inherit;
+    font-size: 0.9rem;
+    font-weight: 700;
+    padding: 0.45rem 1rem;
+    color: var(--navy);
+    background: transparent;
+    border: 2px solid var(--navy);
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.tombol-tipis:hover {
+    color: #fff;
+    background-color: var(--navy);
+}
+
+/* ===== Kartu alumni ===== */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.4rem;
+    margin-top: 2rem;
+}
+
+.kartu {
+    --warna: var(--si);
+    --warna-muda: var(--si-muda);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--putih);
+    border: 1px solid var(--garis);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(15, 42, 92, 0.07);
+    transition: transform 0.28s ease, box-shadow 0.28s ease,
+                border-color 0.28s ease, opacity 0.28s ease;
+}
+
+.kartu.si  { --warna: var(--si);  --warna-muda: var(--si-muda); }
+.kartu.ti  { --warna: var(--ti);  --warna-muda: var(--ti-muda); }
+.kartu.dkv { --warna: var(--dkv); --warna-muda: var(--dkv-muda); }
+.kartu.ts  { --warna: var(--ts);  --warna-muda: var(--ts-muda); }
+
+/* Spanduk berwarna di bagian atas kartu */
+.banner {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    height: 88px;
+    padding: 0.8rem 0.9rem;
+    background:
+        radial-gradient(circle at 85% 120%, rgba(255, 255, 255, 0.35), transparent 55%),
+        linear-gradient(120deg, var(--warna), var(--warna-muda));
+    transition: height 0.28s ease;
+}
+
+.lencana-angkatan {
+    padding: 0.2rem 0.7rem;
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 700;
+    background-color: rgba(255, 255, 255, 0.22);
+    border-radius: 999px;
+}
+
+.logo-prodi {
+    display: grid;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    background-color: #fff;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.18);
+}
+
+.logo-prodi img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+
+/* Avatar orang menimpa spanduk */
+.avatar {
+    position: relative;
+    z-index: 1;
+    width: 92px;
+    height: 92px;
+    margin: -46px 0 0 1.2rem;
+    border: 4px solid #fff;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    color: #fff;
+    font-size: 1.9rem;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    background-color: var(--warna);
+    box-shadow: 0 6px 14px rgba(15, 42, 92, 0.18);
+    transition: transform 0.28s ease;
+}
+
+.isi {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 0.8rem 1.2rem 1.3rem;
+}
+
+.kartu h2 {
+    color: var(--navy);
+    font-size: 1.15rem;
+    font-weight: 800;
+    line-height: 1.3;
+}
+
+.prodi {
+    color: var(--warna);
+    font-size: 0.92rem;
+    font-weight: 700;
+}
+
+.info {
+    display: grid;
+    gap: 0.6rem;
+    margin-top: 0.9rem;
+    padding-top: 0.9rem;
+    border-top: 1px solid var(--garis);
+}
+
+.info li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    font-size: 0.92rem;
+    line-height: 1.4;
+}
+
+.info svg {
+    flex: none;
+    margin-top: 0.15rem;
+    color: var(--warna);
+}
+
+.info strong {
+    display: block;
+    color: var(--teks);
+    font-weight: 700;
+}
+
+.info span {
+    color: var(--teks-redup);
+}
+
+.tag {
+    align-self: flex-start;
+    margin-top: 0.9rem;
+    padding: 0.25rem 0.75rem;
+    color: var(--warna);
+    font-size: 0.8rem;
+    font-weight: 700;
+    background-color: color-mix(in srgb, var(--warna) 12%, white);
+    border-radius: 999px;
+}
+
+/* Kutipan: tersembunyi, muncul saat kartu disorot */
+.detail {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    padding-left: 0.8rem;
+    color: var(--teks-redup);
+    font-size: 0.9rem;
+    font-style: italic;
+    border-left: 3px solid var(--warna);
+    transition: max-height 0.3s ease, opacity 0.3s ease, margin-top 0.3s ease;
+}
+
+/* ===== Efek hover (kelasnya ditambahkan oleh JavaScript) ===== */
+.kartu.aktif {
+    transform: translateY(-8px);
+    border-color: var(--warna);
+    box-shadow: 0 22px 40px rgba(15, 42, 92, 0.2);
+}
+
+.kartu.aktif .banner {
+    height: 100px;
+}
+
+.kartu.aktif .avatar {
+    transform: scale(1.06);
+}
+
+.kartu.aktif .detail {
+    max-height: 8rem;
+    opacity: 1;
+    margin-top: 0.9rem;
+}
+
+.grid.ada-sorotan .kartu:not(.aktif) {
+    opacity: 0.55;
+}
+
+/* ===== Pesan kosong ===== */
+.pesan-kosong {
+    text-align: center;
+    padding: 3rem 1rem;
+    color: var(--teks-redup);
+}
+
+.pesan-kosong p {
+    max-width: 44ch;
+    margin: 0 auto 1rem;
+}
+
+/* ===== Footer biru ===== */
+.footer {
+    padding: 1.6rem 0;
+    color: #dbe6ff;
+    font-size: 0.92rem;
+    text-align: center;
+    background-color: var(--navy);
+}
+
+.footer .catatan {
+    margin-top: 0.25rem;
+    color: #9db6e8;
+    font-size: 0.82rem;
+}
+
+/* ===== Aksesibilitas ===== */
+.kartu:focus-visible,
+.chip:focus-visible,
+.tombol:focus-visible,
+.tombol-tipis:focus-visible,
+.nav a:focus-visible,
+.pilihan select:focus-visible {
+    outline: 3px solid var(--biru);
+    outline-offset: 3px;
+}
+
+.hero .tombol:focus-visible {
+    outline-color: var(--kuning);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* ===== Responsif ===== */
+@media (max-width: 900px) {
+    .nav-menu {
+        display: none;
+    }
+
+    .logo-fkom {
+        margin-left: auto;
+    }
+
+    .hero-isi {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .hero-teks {
+        padding: 2.5rem 0 1.5rem;
+    }
+
+    .hero-foto img {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .baris-pilihan {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .logo-fkom {
+        height: 30px;
+    }
+
+    .merek small {
+        display: none;
+    }
+
+    .panel-filter {
+        padding: 1.1rem;
+    }
+
+    .baris-pilihan {
+        grid-template-columns: 1fr;
+    }
+
+    .baris-info {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
